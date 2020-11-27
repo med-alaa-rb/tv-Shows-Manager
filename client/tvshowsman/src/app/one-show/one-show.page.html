@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>oneShow</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-button (click) = "btp()" color="warning"> < back to list </ion-button>
+    <h3>{{this.pageContent.name}}</h3>
+    <div class="carousel-item active">
+      <img
+        src="{{this.pageContent.image.medium}}"
+        alt="{{this.pageContent.image.original}}"
+      />
+      <h5>genre :</h5>
+      <h5 *ngFor="let item of this.pageContent.genres">
+        <span style="flex-direction: row;">{{item}}</span>
+      </h5>
+      <h5>origin country : {{this.pageContent.network.country.name}}</h5>
+      <h5>by : {{this.pageContent.network.name}}</h5>
+      <h5>rating : {{this.pageContent.rating.average}}</h5>
+      <h5>during : {{this.pageContent.runtime}}</h5>
+      <h5>status : {{this.pageContent.status}}</h5>
+      <h5>summary :</h5>
+      <h5>{{this.pageContent.summary}}</h5>
+    </div>
+  </div>
+</ion-content>

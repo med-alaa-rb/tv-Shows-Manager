@@ -4,6 +4,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <div class="main-app-top">
+    <ion-list no-lines>
+      <ion-item *ngFor="let element of list">
+        <img
+          style="width: 45%; height: 80%"
+          src="{{element?.image.medium}}"
+          alt="{{element?.image.original}}"
+        />
+        <div class="item-detail-container">
+          <div style="text-align: center" class="item-container">
+            <h3 style="color: goldenrod">{{element?.name}}</h3>
+            <span>genre:</span>
+            <div *ngFor="let element of element?.genres">
+              <ion-card-subtitle
+                ><strong>{{element}}</strong></ion-card-subtitle
+              >
+            </div>
+            <ion-badge color="warning">{{element?.rating.average}}</ion-badge>
+            <p>{{element?.language}}</p>
+            <ion-button color="warning" (click)="showMore(element.id)"
+              >Show more...</ion-button
+            >
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
