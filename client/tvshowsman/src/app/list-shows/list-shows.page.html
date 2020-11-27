@@ -2,6 +2,12 @@
   <ion-toolbar>
     <ion-title>listShows</ion-title>
   </ion-toolbar>
+  <ion-searchbar
+    #searchVal
+    (showCancelButton)="shouldShowCancel()"
+    (ionInput)="onInput(searchVal.value)"
+  >
+  </ion-searchbar>
 </ion-header>
 
 <ion-content padding>

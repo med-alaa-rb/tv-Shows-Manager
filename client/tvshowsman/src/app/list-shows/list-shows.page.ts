@@ -11,7 +11,7 @@ import { Router } from "@angular/router";
 })
 export class ListShowsPage implements OnInit {
   list: any;
-
+  searchValue: String = "";
   constructor(
     public api: ApiService,
     private _http: HttpService,
@@ -27,6 +27,14 @@ export class ListShowsPage implements OnInit {
   }
   showMore(id) {
     this.local.detail = this.list[id - 1];
-    this.router.navigateByUrl("/one-show")
+    this.router.navigateByUrl("/one-show");
   }
+  onInput(val) {
+    if(val.length === 0){
+      this.ngOnInit()
+    }
+    this.searchValue = val;
+    this.list = this.list.filter((element) => element.name.search(this.searchValue) != -1);
+  }
+ 
 }

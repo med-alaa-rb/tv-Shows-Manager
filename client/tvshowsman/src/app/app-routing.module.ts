@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'one-show',
     loadChildren: () => import('./one-show/one-show.module').then( m => m.OneShowPageModule)
   },
+  {
+    path: 'result-search',
+    loadChildren: () => import('./result-search/result-search.module').then( m => m.ResultSearchPageModule)
+  },
 
 ];
 
