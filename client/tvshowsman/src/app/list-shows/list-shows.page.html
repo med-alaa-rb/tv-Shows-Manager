@@ -17,13 +17,18 @@
   <div class="main-app-top">
     <ion-list no-lines>
       <ion-item *ngFor="let element of list">
-        <img
-          style="width: 45%; height: 80%"
-          src="{{element?.image.medium}}"
-          alt="{{element?.image.original}}"
-        />
+        <div>
+          <img
+            style="width: 65%; height: 80%"
+            src="{{element?.image.medium}}"
+            alt="{{element?.image.original}}"
+          />
+          <ion-button color="warning" (click)="showMore(element.id)"
+            >Show more...</ion-button
+          >
+        </div>
         <div class="item-detail-container">
-          <div style="text-align: center" class="item-container">
+          <div  class="item-container">
             <h3 style="color: goldenrod">{{element?.name}}</h3>
             <span>genre:</span>
             <div *ngFor="let element of element?.genres">
@@ -32,10 +37,14 @@
               >
             </div>
             <ion-badge color="warning">{{element?.rating.average}}</ion-badge>
+            <p>
+              <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+                <ion-fab-button>
+                  <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </p>
             <p>{{element?.language}}</p>
-            <ion-button color="warning" (click)="showMore(element.id)"
-              >Show more...</ion-button
-            >
           </div>
         </div>
       </ion-item>

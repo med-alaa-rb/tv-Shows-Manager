@@ -26,10 +26,12 @@ export class OneShowPage implements OnInit {
         console.log(this.userComments);
       });
   }
+
   btp() {
     this.pageContent = {};
     this.router.navigateByUrl("list-shows");
   }
+
   submitPost(idShow, comment, name) {
     if (!comment) {
       alert("add your comment before");
