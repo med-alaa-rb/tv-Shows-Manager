@@ -1,41 +1,22 @@
 var route2 = require("express").Router();
-const Rest = require("../database/db").Rest;
+const Comments = require("../database/db").Comments;
 
-route2.post("/rest", (req, res) => {
-  let data = new Rest();
-  data.adress = req.body.adress;
-  data.updated = new Date();
-  data.ofBoolean.push(req.body.ofBoolean);
-
-  data.save((err, data) => {
-    if (err) return console.error(err);
-    console.log(data);
+route2.post("/postComments", (req, res) => {
+  console.log(req.body);
+  let userComments = new Comments({
+    idShow: req.body.idShow,
+    comment: req.body.comment,
+    name: req.body.name,
   });
-  res.send(data);
-});
-
-route2.get("/getdata", (req, res) => {
-  Rest.find((err, kittens) => {
-    if (err) return console.error(err);
-    res.send(kittens);
+  userComments.save((err, userData) => {
+    if (err) console.error(err);
+    console.log(`${userData.name} post to db`);
   });
 });
 
-
-route2.get("/getdataName", (req, res) => {
-  Rest.find({"adress": "manara"},(err, kittens) => {
-    if (err) return console.error(err);
-    res.send(kittens);
-  });
+route2.post("/dataById", async (req, res) => {
+  let comments = await Comments.find({ idShow: req.body.idShow });
+  res.send(comments)
 });
-
-// const silence = new Kitten({ name: 'Silence' });
-
-// const fluffy = new Kitten({ name: 'fluffy' });
-
-// fluffy.save(function (err, fluffy) {
-//     if (err) return console.error(err);
-//     console.log("done");
-//   });
 
 module.exports = route2;

@@ -6,7 +6,7 @@
 
 <ion-content>
   <div>
-    <ion-button (click) = "btp()" color="warning"> < back to list </ion-button>
+    <ion-button (click)="btp()" color="warning"> < back to list </ion-button>
     <h3>{{this.pageContent.name}}</h3>
     <div class="carousel-item active">
       <img
@@ -15,7 +15,7 @@
       />
       <h5>genre :</h5>
       <h5 *ngFor="let item of this.pageContent.genres">
-        <span style="flex-direction: row;">{{item}}</span>
+        <span style="flex-direction: row">{{item}}</span>
       </h5>
       <h5>origin country : {{this.pageContent.network.country.name}}</h5>
       <h5>by : {{this.pageContent.network.name}}</h5>
@@ -26,4 +26,28 @@
       <h5>{{this.pageContent.summary}}</h5>
     </div>
   </div>
+  <div>
+    <ion-card *ngFor="let item of userComments">
+      <h5>{{item.name}}</h5>
+      <h6>{{item.comment}}</h6>
+    </ion-card>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-label>Notes</ion-label>
+      <ion-textarea
+        #comment
+        rows="6"
+        cols="20"
+        placeholder="Enter any notes here..."
+      ></ion-textarea>
+    </ion-item>
+    <div style="text-align: right">
+      <ion-button
+        color="light"
+        (click)="submitPost(this.pageContent.id, comment.value, this.local.userName)"
+        >Submit</ion-button
+      >
+    </div>
+  </ion-card>
 </ion-content>

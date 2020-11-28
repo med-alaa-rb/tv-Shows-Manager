@@ -28,9 +28,15 @@ export class SignUpUsersPage implements OnInit {
     } else if (password !== repPass) {
       alert("the password must be the same");
     } else {
-      this._http.register({ name, email, fav, password }).subscribe((res) => {
-        this.router.navigateByUrl("list-shows");
-      });
+      this._http
+        .register({ name, email, fav, password })
+        .subscribe((res) => {});
+      this.local.userName = name;
+      this.router.navigateByUrl("list-shows");
     }
+  }
+
+  goToLog() {
+    this.router.navigateByUrl("user-login");
   }
 }

@@ -30,7 +30,12 @@
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
       <ion-label>Welcome to login</ion-label>
-      <ion-button fill="outline" slot="end">log</ion-button>
+      <ion-button
+        fill="outline"
+        slot="end"
+        (click)="logUser(name.value, password.value)"
+        >log</ion-button
+      >
     </ion-item>
     <ion-card-content>
       <ion-item>

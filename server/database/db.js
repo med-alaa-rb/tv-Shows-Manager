@@ -17,13 +17,13 @@ const info = new mongoose.Schema({
   password: String,
 });
 
-const rest = new mongoose.Schema({
-  adress: String,
-  updated: { type: Date, default: Date.now },
-  ofBoolean: [Boolean]
-})
+const comments = new mongoose.Schema({
+  idShow: Number,
+  comment: String,
+  name: String,
+});
 
 const Info = mongoose.model("Info", info);
-const Rest = mongoose.model("rest", rest)
+const Comments = mongoose.model("comments", comments);
 
-module.exports = { Info , Rest};
+module.exports = { Info, Comments };

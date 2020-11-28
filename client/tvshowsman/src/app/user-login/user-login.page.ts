@@ -16,7 +16,17 @@ export class UserLoginPage implements OnInit {
   ) {}
 
   ngOnInit() {}
+
+  logUser(name, password) {
+    this.local.userName = name;
+    this._http.loginUser({ name, password }).subscribe((res) => {
+      res
+        ? this.router.navigateByUrl("list-shows")
+        : alert("username or password wrong");
+    });
+  }
+
   signUpUser() {
-    this.router.navigateByUrl("sign-up-users")
+    this.router.navigateByUrl("sign-up-users");
   }
 }
