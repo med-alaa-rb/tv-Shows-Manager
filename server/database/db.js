@@ -12,7 +12,9 @@ db.once("open", () => {
 
 const info = new mongoose.Schema({
   name: String,
-  age: Number,
+  email: String,
+  fav: String,
+  password: String,
 });
 
 const rest = new mongoose.Schema({

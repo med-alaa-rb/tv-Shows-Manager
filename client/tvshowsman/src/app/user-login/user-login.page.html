@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>userLogin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item href="#" class="ion-activated">
+      <ion-icon name="wifi" slot="start"></ion-icon>
+      <ion-label>Log to your account</ion-label>
+    </ion-item>
+
+    <ion-item href="#">
+      <ion-icon name="wine" slot="start"></ion-icon>
+      <ion-label>Discover new tv show</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="walk" slot="start"></ion-icon>
+      <ion-label>Discuss Tv-Shows with other user</ion-label>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-icon name="warning" slot="start"></ion-icon>
+      <ion-label>report bad users</ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label>Welcome to login</ion-label>
+      <ion-button fill="outline" slot="end">log</ion-button>
+    </ion-item>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="fixed">name</ion-label>
+        <ion-input #name placeholder="your name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">password</ion-label>
+        <ion-input
+          type="password"
+          #password
+          placeholder="your password"
+        ></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <span
+    >new with us ?
+    <strong style="color: goldenrod" (click)="signUpUser()"
+      >clich here</strong
+    ></span
+  >
+</ion-content>

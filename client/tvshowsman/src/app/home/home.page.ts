@@ -15,8 +15,10 @@ export class HomePage {
     private router: Router
   ) {}
 
-  async advance() {
+  advance() {
     this.router.navigateByUrl("list-shows");
-    await console.log("hello");
+  }
+  loginUser() {
+    this.router.navigateByUrl("user-login");
   }
 }

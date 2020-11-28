@@ -8,20 +8,34 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'landing',
     pathMatch: 'full'
   },
   {
     path: 'list-shows',
     loadChildren: () => import('./list-shows/list-shows.module').then( m => m.ListShowsPageModule)
-  },  {
+  },
+  {
     path: 'one-show',
     loadChildren: () => import('./one-show/one-show.module').then( m => m.OneShowPageModule)
   },
   {
-    path: 'result-search',
-    loadChildren: () => import('./result-search/result-search.module').then( m => m.ResultSearchPageModule)
+    path: 'landing',
+    loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
+  },  {
+    path: 'user-login',
+    loadChildren: () => import('./user-login/user-login.module').then( m => m.UserLoginPageModule)
   },
+  {
+    path: 'sign-up-users',
+    loadChildren: () => import('./sign-up-users/sign-up-users.module').then( m => m.SignUpUsersPageModule)
+  },
+  {
+    path: 'add-shows',
+    loadChildren: () => import('./add-shows/add-shows.module').then( m => m.AddShowsPageModule)
+  },
+
+
 
 ];
 

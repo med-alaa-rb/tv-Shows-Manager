@@ -10,8 +10,23 @@ const Info = require("../database/db").Info;
 //     console.log("done");
 //   });
 
+route1.post("/addUser", (req, res) => {
+  let userData = new Info({
+    name: req.body.name,
+    email: req.body.email,
+    fav: req.body.fav,
+    password: req.body.password,
+  });
+  userData.save((err, userData) => {
+    if (err) console.error(err);
+    console.log(`${userData.name} saved to db`);
+  });
+});
 
-
-
+route1.post("/checkName", async (req, res) => {
+  (await Info.findOne({ name: req.body.name }))
+    ? res.send(false)
+    : res.send(true);
+});
 
 module.exports = route1;

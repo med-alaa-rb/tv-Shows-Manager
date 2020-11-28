@@ -30,11 +30,16 @@ export class ListShowsPage implements OnInit {
     this.router.navigateByUrl("/one-show");
   }
   onInput(val) {
-    if(val.length === 0){
-      this.ngOnInit()
+    if (val.length === 0) {
+      this.ngOnInit();
     }
     this.searchValue = val;
-    this.list = this.list.filter((element) => element.name.search(this.searchValue) != -1);
+    this.list = this.list.filter(
+      (element) =>
+        element.name.toLowerCase().search(this.searchValue.toLowerCase()) != -1
+    );
   }
- 
+  addShow() {
+    this.router.navigateByUrl("add-shows");
+  }
 }

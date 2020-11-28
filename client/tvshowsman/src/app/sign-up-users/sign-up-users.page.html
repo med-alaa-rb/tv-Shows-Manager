@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>signUpUsers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header style="text-align: center">
+      <ion-card-title style="color: goldenrod">Welcome</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div style="text-align: center">
+        <ion-item>
+          <ion-input
+            placeholder="Username"
+            #name
+            style="color: goldenrod"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            placeholder="E-mail"
+            #email
+            style="color: goldenrod"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            placeholder="Fav show"
+            #fav
+            style="color: goldenrod"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            type="password"
+            placeholder="Password"
+            #password
+            style="color: goldenrod"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            type="password"
+            placeholder="Repeat Password"
+            #repPass
+            style="color: goldenrod"
+          ></ion-input>
+        </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <p style="color: goldenrod; font-size: small">*All fields are required</p>
+  <ion-card style="text-align: center">
+    <ion-button
+      color="success"
+      (click)="signUser(name.value, email.value, fav.value, password.value, repPass.value)"
+      >Sign Up</ion-button
+    >
+  </ion-card>
+</ion-content>

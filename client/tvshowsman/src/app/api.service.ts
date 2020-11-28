@@ -9,4 +9,5 @@ export class ApiService {
   getData(){
     return this.http.get(' http://api.tvmaze.com/shows')
   }
+  
 }
