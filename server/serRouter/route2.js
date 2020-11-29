@@ -2,7 +2,6 @@ var route2 = require("express").Router();
 const Comments = require("../database/db").Comments;
 
 route2.post("/postComments", (req, res) => {
-  console.log(req.body);
   let userComments = new Comments({
     idShow: req.body.idShow,
     comment: req.body.comment,

@@ -29,6 +29,20 @@ export class HttpService {
   }
   // user Comments by idShow
   commentsByIdShow(obj) {
-    return this.http.post(this.ROOT_URL + '/dataById', obj)
+    return this.http.post(this.ROOT_URL + "/dataById", obj);
+  }
+  // add user finished show
+  userFisishedShow(obj) {
+    return this.http.post(this.ROOT_URL + "/endedShow", obj);
+  }
+  // add show to user wish list
+  userToWishList(obj) {
+    return this.http.post(this.ROOT_URL + "/favShow", obj);
+  }
+  renderEndedShow(obj) {
+    return this.http.post(this.ROOT_URL + "/sendEndedShow", obj);
+  }
+  renderWishList(obj) {
+    return this.http.post(this.ROOT_URL + "/sendFavShow", obj);
   }
 }

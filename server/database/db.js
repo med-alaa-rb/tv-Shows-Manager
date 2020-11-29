@@ -15,6 +15,9 @@ const info = new mongoose.Schema({
   email: String,
   fav: String,
   password: String,
+  finishedShow: [{ idShow: Number }],
+  inWatch: Number,
+  wishList: [{ idShow: Number }],
 });
 
 const comments = new mongoose.Schema({

@@ -34,6 +34,10 @@ const routes: Routes = [
     path: 'add-shows',
     loadChildren: () => import('./add-shows/add-shows.module').then( m => m.AddShowsPageModule)
   },
+  {
+    path: 'user-profile',
+    loadChildren: () => import('./user-profile/user-profile.module').then( m => m.UserProfilePageModule)
+  },
 
 
 

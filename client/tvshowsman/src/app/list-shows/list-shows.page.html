@@ -1,6 +1,10 @@
-<ion-header>
+
+
+<ion-header translucent>
   <ion-toolbar>
-    <ion-title>listShows</ion-title>
+    <ion-title>{{this.local.userName}}</ion-title>
+
+    <ion-button (click)="settingsPopover()" slot="end">Show</ion-button>
   </ion-toolbar>
   <ion-searchbar
     #searchVal
@@ -28,7 +32,7 @@
           >
         </div>
         <div class="item-detail-container">
-          <div  class="item-container">
+          <div class="item-container">
             <h3 style="color: goldenrod">{{element?.name}}</h3>
             <span>genre:</span>
             <div *ngFor="let element of element?.genres">
@@ -38,7 +42,12 @@
             </div>
             <ion-badge color="warning">{{element?.rating.average}}</ion-badge>
             <p>
-              <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+              <ion-fab
+                vertical="bottom"
+                horizontal="center"
+                slot="fixed"
+                (click)="presentAlert(element.id, this.local.userName)"
+              >
                 <ion-fab-button>
                   <ion-icon name="add"></ion-icon>
                 </ion-fab-button>
